@@ -333,6 +333,7 @@ func NewMachine(ctx context.Context, cfg Config, opts ...Opt) (*Machine, error) 
 		if err := jail(ctx, m, &cfg); err != nil {
 			return nil, err
 		}
+		fmt.Println("jail() OK", m.cmd.Args)
 	} else {
 		m.Handlers.Validation = m.Handlers.Validation.Append(ConfigValidationHandler)
 		m.cmd = configureBuilder(defaultFirecrackerVMMCommandBuilder, cfg).Build(ctx)
@@ -370,6 +371,8 @@ func NewMachine(ctx context.Context, cfg Config, opts ...Opt) (*Machine, error) 
 	}
 
 	m.logger.Debug("Called NewMachine()")
+
+	fmt.Println("NewMachine() DONE", m.cmd.Args)
 	return m, nil
 }
 
