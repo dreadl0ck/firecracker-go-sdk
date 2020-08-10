@@ -1,4 +1,4 @@
-module github.com/firecracker-microvm/firecracker-go-sdk
+module github.com/dreadl0ck/firecracker-go-sdk
 
 go 1.11
 
@@ -6,6 +6,7 @@ require (
 	github.com/containerd/fifo v0.0.0-20191213151349-ff969a566b00
 	github.com/containernetworking/cni v0.7.2-0.20190807151350-8c6c47d1c7fc
 	github.com/containernetworking/plugins v0.8.6
+	github.com/firecracker-microvm/firecracker-go-sdk v0.21.0
 	github.com/go-openapi/errors v0.19.6
 	github.com/go-openapi/runtime v0.19.20
 	github.com/go-openapi/strfmt v0.19.5

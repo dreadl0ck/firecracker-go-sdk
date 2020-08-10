@@ -24,7 +24,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/firecracker-microvm/firecracker-go-sdk/client/operations"
+	"github.com/dreadl0ck/firecracker-go-sdk/client/operations"
 )
 
 // Default firecracker HTTP client.

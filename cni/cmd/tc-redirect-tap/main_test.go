@@ -27,7 +27,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/vishvananda/netlink"
 
-	"github.com/firecracker-microvm/firecracker-go-sdk/cni/internal"
+	"github.com/dreadl0ck/firecracker-go-sdk/cni/internal"
 )
 
 const (

@@ -37,7 +37,7 @@ import (
 	"github.com/containernetworking/plugins/pkg/ns"
 	"github.com/pkg/errors"
 
-	"github.com/firecracker-microvm/firecracker-go-sdk/cni/internal"
+	"github.com/dreadl0ck/firecracker-go-sdk/cni/internal"
 )
 
 // StaticNetworkConf holds the configuration needed to configure a VM's networking

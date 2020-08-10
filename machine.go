@@ -35,7 +35,7 @@ import (
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 
-	models "github.com/firecracker-microvm/firecracker-go-sdk/client/models"
+	models "github.com/dreadl0ck/firecracker-go-sdk/client/models"
 )
 
 const (
