@@ -277,6 +277,8 @@ func (b JailerCommandBuilder) Build(ctx context.Context) *exec.Cmd {
 		cmd.Stderr = stderr
 	}
 
+	fmt.Println("[jail] cmd.Stdout", cmd.Stdout, "cmd.Stderr", cmd.Stderr)
+
 	return cmd
 }
 

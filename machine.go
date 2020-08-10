@@ -316,6 +316,8 @@ func NewMachine(ctx context.Context, cfg Config, opts ...Opt) (*Machine, error) 
 		exitCh: make(chan struct{}),
 	}
 
+	fmt.Println("os.Stdout", os.Stdout, "os.Stderr", os.Stderr)
+
 	if cfg.VMID == "" {
 		randomID, err := uuid.NewV4()
 		if err != nil {
@@ -486,6 +488,8 @@ func (m *Machine) defaultNetNSPath() string {
 func (m *Machine) startVMM(ctx context.Context) error {
 	m.logger.Printf("Called startVMM(), setting up a VMM on %s", m.Cfg.SocketPath)
 	startCmd := m.cmd.Start
+
+	fmt.Println("[startVMM] cmd.Stdout", m.cmd.Stdout, "cmd.Stderr", m.cmd.Stderr)
 
 	var err error
 	if m.Cfg.NetNS != "" && m.Cfg.JailerCfg == nil {
