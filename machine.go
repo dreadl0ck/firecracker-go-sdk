@@ -490,6 +490,7 @@ func (m *Machine) startVMM(ctx context.Context) error {
 	startCmd := m.cmd.Start
 
 	fmt.Println("[startVMM] cmd.Stdout", m.cmd.Stdout, "cmd.Stderr", m.cmd.Stderr)
+	fmt.Println("[startVMM] args", m.cmd.Args)
 
 	var err error
 	if m.Cfg.NetNS != "" && m.Cfg.JailerCfg == nil {
