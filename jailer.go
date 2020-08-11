@@ -374,7 +374,7 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 				m.Cfg.KernelImagePath,
 				filepath.Join(rootfs, kernelImageFileName),
 			); err != nil {
-				fmt.Println("failed to copy kernel image")
+				fmt.Println("failed to link kernel image")
 				return err
 			}
 
@@ -386,6 +386,7 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 					m.Cfg.InitrdPath,
 					filepath.Join(rootfs, initrdFilename),
 				); err != nil {
+					fmt.Println("failed to link initrd")
 					return err
 				}
 			}
@@ -397,8 +398,9 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 
 				if err := linkFileToRootFS(
 					hostPath,
-					driveFileName,
+					filepath.Join(rootfs, driveFileName),
 				); err != nil {
+					fmt.Println("failed to link drive")
 					return err
 				}
 
@@ -420,6 +422,7 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 					filepath.Join(rootfs, fileName),
 					*fifoPath,
 				); err != nil {
+					fmt.Println("failed to link FIFO")
 					return err
 				}
 
