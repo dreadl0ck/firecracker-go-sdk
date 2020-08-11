@@ -379,9 +379,8 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 				initrdFilename := filepath.Base(m.Cfg.InitrdPath)
 				// copy initrd to root fs
 				if err := linkFileToRootFS(
-					m.Cfg.JailerCfg,
-					filepath.Join(rootfs, initrdFilename),
 					m.Cfg.InitrdPath,
+					initrdFilename,
 				); err != nil {
 					return err
 				}
@@ -393,9 +392,8 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 				driveFileName := filepath.Base(hostPath)
 
 				if err := linkFileToRootFS(
-					m.Cfg.JailerCfg,
-					filepath.Join(rootfs, driveFileName),
 					hostPath,
+					driveFileName,
 				); err != nil {
 					return err
 				}
