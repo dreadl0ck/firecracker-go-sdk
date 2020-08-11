@@ -419,7 +419,7 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 					return err
 				}
 
-				if err := os.Chown(filepath.Join(rootfs, fileName), *m.Cfg.JailerCfg.UID, *m.Cfg.JailerCfg.GID); err != nil {
+				if err := os.Chown(fileName, *m.Cfg.JailerCfg.UID, *m.Cfg.JailerCfg.GID); err != nil {
 					return err
 				}
 
