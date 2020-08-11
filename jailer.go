@@ -347,7 +347,7 @@ func jail(ctx context.Context, m *Machine, cfg *Config) error {
 	return nil
 }
 
-func linkFileToRootFS(cfg *JailerConfig, dst, src string) error {
+func linkFileToRootFS(src, dst string) error {
 	if err := os.Link(src, dst); err != nil {
 		return err
 	}
@@ -367,10 +367,10 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 
 			// copy kernel image to root fs
 			if err := linkFileToRootFS(
-				m.Cfg.JailerCfg,
-				filepath.Join(rootfs, kernelImageFileName),
 				m.Cfg.KernelImagePath,
+				kernelImageFileName,
 			); err != nil {
+				fmt.Println("failed to copy kernel image")
 				return err
 			}
 

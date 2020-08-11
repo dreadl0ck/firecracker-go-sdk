@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd1c190a-cde1-4e18-bdc6-e777cd598f33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machine.go" beforeDir="false" afterPath="$PROJECT_DIR$/machine.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jailer.go" beforeDir="false" afterPath="$PROJECT_DIR$/jailer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +42,10 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="578" y="194" width="763" height="692" key="find.popup" timestamp="1597094345990">
+    <state x="578" y="194" width="763" height="692" key="find.popup" timestamp="1597147102230">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="578" y="194" width="763" height="692" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597094345990" />
+    <state x="578" y="194" width="763" height="692" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1597147102230" />
     <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1597100040226">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
