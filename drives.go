@@ -3,7 +3,7 @@ package firecracker
 import (
 	"strconv"
 
-	models "github.com/firecracker-microvm/firecracker-go-sdk/client/models"
+	models "github.com/dreadl0ck/firecracker-go-sdk/client/models"
 )
 
 const rootDriveName = "root_drive"

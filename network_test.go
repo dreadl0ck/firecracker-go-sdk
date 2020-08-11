@@ -25,8 +25,8 @@ import (
 	"time"
 
 	"github.com/containernetworking/cni/libcni"
-	models "github.com/firecracker-microvm/firecracker-go-sdk/client/models"
-	"github.com/firecracker-microvm/firecracker-go-sdk/fctesting"
+	models "github.com/dreadl0ck/firecracker-go-sdk/client/models"
+	"github.com/dreadl0ck/firecracker-go-sdk/fctesting"
 	"github.com/sparrc/go-ping"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
