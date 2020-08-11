@@ -365,10 +365,14 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 				return ErrMissingJailerConfig
 			}
 
+			fmt.Println("rootfs BEFORE", rootfs)
+			rootfs = filepath.Join(m.Cfg.JailerCfg.ChrootBaseDir, filepath.Base(m.Cfg.JailerCfg.ExecFile), m.Cfg.JailerCfg.ID, rootfsFolderName)
+			fmt.Println("rootfs AFTER", rootfs)
+
 			// copy kernel image to root fs
 			if err := linkFileToRootFS(
 				m.Cfg.KernelImagePath,
-				kernelImageFileName,
+				filepath.Join(rootfs, kernelImageFileName),
 			); err != nil {
 				fmt.Println("failed to copy kernel image")
 				return err
@@ -380,7 +384,7 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 				// copy initrd to root fs
 				if err := linkFileToRootFS(
 					m.Cfg.InitrdPath,
-					initrdFilename,
+					filepath.Join(rootfs, initrdFilename),
 				); err != nil {
 					return err
 				}
@@ -413,13 +417,13 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 
 				fileName := filepath.Base(*fifoPath)
 				if err := linkFileToRootFS(
+					filepath.Join(rootfs, fileName),
 					*fifoPath,
-					fileName,
 				); err != nil {
 					return err
 				}
 
-				if err := os.Chown(fileName, *m.Cfg.JailerCfg.UID, *m.Cfg.JailerCfg.GID); err != nil {
+				if err := os.Chown(filepath.Join(rootfs, fileName), *m.Cfg.JailerCfg.UID, *m.Cfg.JailerCfg.GID); err != nil {
 					return err
 				}
 
