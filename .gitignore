@@ -7,3 +7,4 @@ root-drive.img
 TestPID.img
 build/
 testdata/logs/
+.idea
