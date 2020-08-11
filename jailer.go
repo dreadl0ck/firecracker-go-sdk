@@ -419,8 +419,8 @@ func LinkFilesHandler(rootfs, kernelImageFileName string) Handler {
 
 				fileName := filepath.Base(*fifoPath)
 				if err := linkFileToRootFS(
-					filepath.Join(rootfs, fileName),
 					*fifoPath,
+					filepath.Join(rootfs, fileName),
 				); err != nil {
 					fmt.Println("failed to link FIFO")
 					return err
